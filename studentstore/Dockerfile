@@ -1,6 +1,7 @@
 FROM amazoncorretto:11-alpine-jdk as builder
 WORKDIR /app/source
 COPY . .
+RUN chmod +x mvnw
 RUN ./mvnw package
 
 FROM amazoncorretto:11-alpine-jdk 
